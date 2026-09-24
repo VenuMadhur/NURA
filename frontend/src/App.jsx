@@ -1,15 +1,36 @@
-function App(){
+import { useState } from "react";
+import Header from "./components/Header";
+import HealthSection from "./components/HealthSection";
+import PeopleSection from "./components/PeopleSection";
+
+function App() {
+  const [selected, setSelected] = useState();
+
   return (
     <div>
-      <h1>NURA</h1>
-      <p>Your Health. Your People. Connected </p>
-      <button type="button">My Health</button>
-      <p>Manage your personal health information</p>
-      <button type="button">My People</button>
-      <p>Manage and connect with your people</p>
+      <Header />
+      <button
+        type="button"
+        onClick={() => {
+          setSelected("health");
+        }}
+      >
+        My Health
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          setSelected("people");
+        }}
+      >
+        My People
+      </button>
+      <main>
+        {selected === "health" && <HealthSection />}
+        {selected === "people" && <PeopleSection />}
+      </main>
     </div>
-  )
+  );
 }
 
-
-export default App
+export default App;
