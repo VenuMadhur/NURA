@@ -2,6 +2,8 @@ import { useState } from "react";
 import Header from "./components/Header";
 import HealthSection from "./components/HealthSection";
 import PeopleSection from "./components/PeopleSection";
+import Hero from "./components/Hero";
+import "./App.css";
 
 function App() {
   const [selected, setSelected] = useState();
@@ -9,23 +11,27 @@ function App() {
   return (
     <div>
       <Header />
-      <button
-        type="button"
-        onClick={() => {
-          setSelected("health");
-        }}
-      >
-        My Health
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          setSelected("people");
-        }}
-      >
-        My People
-      </button>
       <main>
+        <Hero />
+        <div className="section-switcher">
+          <button
+            type="button"
+            onClick={() => {
+              setSelected("health");
+            }}
+          >
+            My Health
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setSelected("people");
+            }}
+          >
+            My People
+          </button>
+        </div>
+
         {selected === "health" && <HealthSection />}
         {selected === "people" && <PeopleSection />}
       </main>

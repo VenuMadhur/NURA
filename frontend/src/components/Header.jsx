@@ -1,9 +1,29 @@
 function Header() {
   return (
-    <div>
-      <h1>NURA</h1>
-      <p>Your Health. Your People. Connected </p>
-    </div>
+    <header>
+      <nav>
+        <div className="logo">
+          <a href="#">NURA</a>
+          <p>Your Health. Your People. Connected </p>
+        </div>
+        <ul className="nav-links">
+          <li>
+            <a href="#home" className="active">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#myhealth">My Health</a>
+          </li>
+          <li>
+            <a href="#mypeople">My People</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
