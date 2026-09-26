@@ -3,7 +3,7 @@ function Header() {
     <header>
       <nav>
         <div className="logo">
-          <a href="#">NURA</a>
+          <a href="#">VIA</a>
           <p>Your Health. Your People. Connected </p>
         </div>
         <ul className="nav-links">
